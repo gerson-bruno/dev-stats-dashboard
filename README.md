@@ -1,73 +1,34 @@
-# React + TypeScript + Vite
+# 📊 Dev Stats Pulse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/react-%2320232d.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007acc.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-Currently, two official plugins are available:
+## 🌟 Sobre o Projeto
+O **Dev Stats Pulse** é um dashboard interativo desenvolvido para o **GitHub Developer Program**. Ele consome a API oficial do GitHub para transformar dados brutos em uma interface visual limpa e informativa.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> **Status:** Projeto em desenvolvimento ativo para fins de estudo de integração de APIs e UX Design.
 
-## React Compiler
+## 💻 Preview
+![Preview do Dashboard](./public/preview.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Funcionalidades (Feature List)
+- [x] Integração com GitHub REST API via Octokit.
+- [x] Busca dinâmica de perfis de usuário.
+- [x] Visualização de Bio, Avatar e métricas (Repositórios, Seguidores).
+- [ ] Listagem de Repositórios em Cards (Próxima Sprint).
+- [ ] Skeleton Loading para melhor UX.
 
-## Expanding the ESLint configuration
+## 🎨 Design & UX
+Como entusiasta de Design UI/UX, este projeto foca em:
+- **Hierarquia Visual:** Informações cruciais em destaque.
+- **Acessibilidade:** Uso de textos alternativos dinâmicos e contraste adequado.
+- **Responsividade:** Planejado para funcionar em diferentes tamanhos de tela.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Como rodar localmente
+1. Clone o repositório: `git clone https://github.com/gerson-bruno/dev-stats-dashboard.git`
+2. Instale as dependências: `npm install`
+3. Crie um arquivo `.env` com seu `VITE_GITHUB_TOKEN`.
+4. Inicie o servidor: `npm run dev`
+5. Acesse o dashboard em `http://localhost:5173/`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
